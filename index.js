@@ -61,8 +61,12 @@ function MessageUserToUser(userWs, message) {
       break;
   }
 }
-
+ console.log(
+   "Socket URL:",
+   `ws://${wss.address().address}:${wss.address().port}`
+ );
 wss.on("connection", (ws) => {
+ 
   ws.on("message", (message) => {
     try {
       // 1. Parsear el mensaje correctamente
